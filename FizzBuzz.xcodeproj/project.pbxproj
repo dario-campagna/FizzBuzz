@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C1380B422FA96E900796E65 /* ViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1380B322FA96E900796E65 /* ViewControllerTests.swift */; };
 		5C1B4A1F22F4007300537F22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1B4A1E22F4007300537F22 /* AppDelegate.swift */; };
 		5C1B4A2122F4007300537F22 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1B4A2022F4007300537F22 /* ViewController.swift */; };
 		5C1B4A2422F4007300537F22 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C1B4A2222F4007300537F22 /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5C1380B322FA96E900796E65 /* ViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTests.swift; sourceTree = "<group>"; };
 		5C1B4A1B22F4007300537F22 /* FizzBuzz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FizzBuzz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C1B4A1E22F4007300537F22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5C1B4A2022F4007300537F22 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				5C1B4A3522F4008200537F22 /* Info.plist */,
 				5C1B4A4C22F4010500537F22 /* BrainTests.swift */,
 				5CFB738A22F7F4EA00DB925E /* GameTests.swift */,
+				5C1380B322FA96E900796E65 /* ViewControllerTests.swift */,
 			);
 			path = FizzBuzzTests;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C1380B422FA96E900796E65 /* ViewControllerTests.swift in Sources */,
 				5C1B4A4D22F4010500537F22 /* BrainTests.swift in Sources */,
 				5CFB738B22F7F4EA00DB925E /* GameTests.swift in Sources */,
 			);

@@ -18,68 +18,69 @@ class GameTests: XCTestCase {
     }
     
     func testOnPlayScoreIncremented() {
-        _ = game.play(move: "1")
-        XCTAssertTrue(game.score == 1)
+        let response = game.play(move: "1")
+        XCTAssertTrue(response.score == 1)
     }
     
     func testOnPlayTwiceScoreIncremented() {
         _ = game.play(move: "1")
-        _ = game.play(move: "2")
-        XCTAssertTrue(game.score == 2)
-    }
-
-    func testRightFizzMove() {
-        game.score = 2;
-        let result = game.play(move: "Fizz")
-        XCTAssertTrue(result)
-    }
-    
-    func testWrongFizzMove() {
-        game.score = 1;
-        let result = game.play(move: "Fizz")
-        XCTAssertFalse(result)
-    }
-    
-    func testRightBuzzMove() {
-        game.score = 4;
-        let result = game.play(move: "Buzz")
-        XCTAssertTrue(result)
-    }
-    
-    func testWrongBuzzMove() {
-        game.score = 2;
-        let result = game.play(move: "Buzz")
-        XCTAssertFalse(result)
-    }
-    
-    func testRightFizzBuzzMove() {
-        game.score = 14;
-        let result = game.play(move: "FizzBuzz")
-        XCTAssertTrue(result)
-    }
-    
-    func testWrongFizzBuzzMove() {
-        game.score = 16;
-        let result = game.play(move: "FizzBuzz")
-        XCTAssertFalse(result)
-    }
-    
-    func testRightNumberMove() {
-        game.score = 3;
-        let result = game.play(move: "4")
-        XCTAssertTrue(result)
-    }
-    
-    func testWrongNumberMove() {
-        game.score = 5;
-        let result = game.play(move: "7")
-        XCTAssertFalse(result)
+        let response = game.play(move: "2")
+        XCTAssertTrue(response.score == 2)
     }
     
     func testIfMoveWrongScoreNotIncremented() {
         game.score = 1
-        _ = game.play(move: "Fizz")
-        XCTAssertTrue(game.score == 1)
+        let response = game.play(move: "Fizz")
+        XCTAssertTrue(response.score == 1)
     }
+
+    func testRightFizzMove() {
+        game.score = 2;
+        let response = game.play(move: "Fizz")
+        XCTAssertTrue(response.right)
+    }
+    
+    func testWrongFizzMove() {
+        game.score = 1;
+        let response = game.play(move: "Fizz")
+        XCTAssertFalse(response.right)
+    }
+    
+    func testRightBuzzMove() {
+        game.score = 4;
+        let response = game.play(move: "Buzz")
+        XCTAssertTrue(response.right)
+    }
+    
+    func testWrongBuzzMove() {
+        game.score = 2;
+        let response = game.play(move: "Buzz")
+        XCTAssertFalse(response.right)
+    }
+    
+    func testRightFizzBuzzMove() {
+        game.score = 14;
+        let response = game.play(move: "FizzBuzz")
+        XCTAssertTrue(response.right)
+    }
+    
+    func testWrongFizzBuzzMove() {
+        game.score = 16;
+        let response = game.play(move: "FizzBuzz")
+        XCTAssertFalse(response.right)
+    }
+    
+    func testRightNumberMove() {
+        game.score = 3;
+        let response = game.play(move: "4")
+        XCTAssertTrue(response.right)
+    }
+    
+    func testWrongNumberMove() {
+        game.score = 5;
+        let response = game.play(move: "7")
+        XCTAssertFalse(response.right)
+    }
+    
 }
 
