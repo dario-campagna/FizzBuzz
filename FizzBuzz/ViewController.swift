@@ -28,15 +28,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        game = Game()
-        guard let unwrappedGame = game else {
-            print("Game is nil!")
-            return
-        }
-        gameScore = unwrappedGame.score
+        setupNewGame()
     }
     
-    @IBAction func buttonTapped(_ sender: UIButton) {
+    @IBAction func sendMove(_ sender: UIButton) {
         switch sender {
         case numberButton:
             play(move: .number)
@@ -51,6 +46,10 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func reset(_ sender: Any) {
+        setupNewGame()
+    }
+    
     func play(move: Move) {
         guard let unwrappedGame = game else {
             print("Game is nil!")
@@ -58,6 +57,15 @@ class ViewController: UIViewController {
         }
         let response = unwrappedGame.play(move: move)
         gameScore = response.score
+    }
+    
+    fileprivate func setupNewGame() {
+        game = Game()
+        guard let unwrappedGame = game else {
+            print("Game is nil!")
+            return
+        }
+        gameScore = unwrappedGame.score
     }
 
 }

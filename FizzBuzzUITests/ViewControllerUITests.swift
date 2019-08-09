@@ -80,6 +80,16 @@ class ViewControllerUITests: XCTestCase {
         numberButton.tap()
     }
     
+    func testPlayAgainResetsGame() {
+        let playAgainButton = XCUIApplication().buttons["playAgain"]
+        let numberButton = XCUIApplication().buttons["numberButton"]
+        
+        numberButton.tap()
+        playAgainButton.tap()
+        
+        XCTAssertEqual(numberButton.label, "0")
+    }
+    
     fileprivate func tapTo14() {
         let numberButton = XCUIApplication().buttons["numberButton"]
         let fizzButton = XCUIApplication().buttons["fizzButton"]
