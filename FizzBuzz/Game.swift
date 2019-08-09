@@ -18,7 +18,7 @@ class Game {
         brain = Brain()
     }
     
-    func play(move: String) -> (right: Bool, score: Int) {
+    func play(move: Move) -> (right: Bool, score: Int) {
         if isMoveRight(move) {
             score += 1
             return (true, score)
@@ -27,8 +27,8 @@ class Game {
         }
     }
     
-    fileprivate func isMoveRight(_ move: String) -> Bool {
-        return move == brain.say(number: score + 1)
+    fileprivate func isMoveRight(_ move: Move) -> Bool {
+        return move == brain.check(number: score + 1)
     }
     
 }

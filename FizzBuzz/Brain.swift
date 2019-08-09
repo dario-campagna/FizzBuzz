@@ -10,15 +10,15 @@ import Foundation
 
 class Brain {
     
-    func say(number: Int) -> String {
+    func check(number: Int) -> Move {
         if isMultipleOf(divisor: 15, number: number) {
-            return "FizzBuzz"
+            return .fizzBuzz
         } else if isMultipleOf(divisor: 3, number: number) {
-            return "Fizz"
+            return .fizz
         } else if isMultipleOf(divisor: 5, number: number) {
-            return "Buzz"
+            return .buzz
         } else {
-            return "\(number)"
+            return .number
         }
     }
     

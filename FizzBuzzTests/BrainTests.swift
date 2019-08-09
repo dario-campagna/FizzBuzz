@@ -14,19 +14,19 @@ class BrainTests: XCTestCase {
     let brain = Brain()
     
     func testNoTranslation() {
-        XCTAssertEqual(brain.say(number: 1), "1")
+        XCTAssertEqual(brain.check(number: 1), .number)
     }
     
     func testSayFizz() {
-        XCTAssertEqual(brain.say(number: 3), "Fizz")
+        XCTAssertEqual(brain.check(number: 3), .fizz)
     }
     
     func testSayBuzz() {
-        XCTAssertEqual(brain.say(number: 5), "Buzz")
+        XCTAssertEqual(brain.check(number: 5), .buzz)
     }
     
     func testSayFizzBuzz() {
-        XCTAssertEqual(brain.say(number: 15), "FizzBuzz")
+        XCTAssertEqual(brain.check(number: 15), .fizzBuzz)
     }
 
 }

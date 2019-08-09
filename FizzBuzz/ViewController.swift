@@ -10,15 +10,33 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    var gameScore: Int?
+    @IBOutlet weak var numberButton: UIButton!
     var game: Game?
+    var gameScore: Int? {
+        didSet {
+            guard let unwrappedGameScore = gameScore else {
+                print("Game score is nil!")
+                return
+            }
+            numberButton.setTitle("\(unwrappedGameScore)", for: .normal)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         game = Game()
+        guard let unwrappedGame = game else {
+            print("Game is nil!")
+            return
+        }
+        gameScore = unwrappedGame.score
     }
     
-    func play(move: String) {
+    @IBAction func buttonTapped(_ sender: UIButton) {
+        playNew(move: .number)
+    }
+    
+    func playNew(move: Move) {
         guard let unwrappedGame = game else {
             print("Game is nil!")
             return
